@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration:none;
+    /* text-decoration:underline; */
+    font-family: 'Rubik Wet Paint', cursive;
+    /* font-family: 'Ultra', serif; */
+    /* font-family: "Rockwell"; */
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    background: #1E242A;
+    overflow: hidden;
+    cursor: none;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+
+}
+#box1{
+    width: 640px;
+    height: 800px;
+    background-image: url('pexels-cottonbro-studio-4659806.jpg');
+    position: absolute;
+    bottom: 100%;
+    left: 30%;
+    animation: anim 2s forwards,anim2 3s forwards 3s;
+
+
+}
+#box1:after{
+    content:'';
+    position: absolute;
+    width: 600px;
+    height: 427px;
+    background-image: url('pexels-chepté-cormani-1416530.png');
+    left: 0px;
+    z-index: -1;
+    border-radius: 40px;
+
+}
+@keyframes anim {
+    from{
+        bottom:-100%;
+    }
+    to{
+        bottom: 0%;
+    }
+    
+}
+@keyframes anim2 {
+    from{
+        left: 30px;
+        width: 530px;
+
+    }
+    to{
+        width:0px;
+        left:50px;
+    }
+    
+}
+#box2{
+    width: auto;
+    height: auto;
+    font-family: 'Bahnschrift Condensed';
+    color:white;
+    font-size: 10em;
+    font-weight: 500;
+    line-height: 130px;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    overflow: hidden;
+}
+#text{
+    position: relative;
+    left: -100%;
+    animation:anim3 2s forwards 3s;
+
+
+}
+@keyframes anim3 {
+    from{
+        left: -100%;
+
+    }
+    to{
+        left: 0%;
+    }
+}
+#box3{
+    overflow: hidden;
+    
+}
+#container{
+    width:100%;
+    position: absolute;
+    top:-100%;
+    animation: anim4 2s forwards 2.5s;
+
+}
+#logo{
+    float: right;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 200px;
+
+}
+#logo img{
+    width:150px;
+    
+    border-radius: 30px;
+}
+@keyframes anim4 {
+    from{
+
+        top:-100%;
+        
+
+    }
+    to{
+        
+        top:220px;
+    }
+    
+}
+
+
+
+
+header {
+    
+    width: 100%;
+    height: 80px;
+    background: #000000;
+    display: flex;
+    align-content: center;
+    justify-content:space-between;
+    padding: 0 100px;
+    border-radius: 30px;
+    /* margin-top:10px; */
+}
+
+.logo {
+    /* text-decoration: none; */
+    font-size: 50px;
+    font-weight: bold;
+    /* font-family: Rockwell; */
+    /* font-family: 'Rubik Pixels', cursive; */
+    font-family: 'Monoton', cursive;
+    /* font-family: 'Black Ops One', cursive; */
+    /* font-family: 'Fredericka the Great', cursive; */
+    /* font-family: 'Rye', cursive; */
+    /* font-family: 'East Sea Dokdo', cursive; */
+    /* font-family: 'Bungee Shade', cursive; */
+    animation:blink 1s linear infinite;
+    /* text-decoration: none; */
+    /* animation-fill-mode: both; */
+    
+    color: #f60243;
+}
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+    
+    
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav-bar ul {
+
+    display: flex;
+    /* gap: 20px; */
+   
+}
+
+.nav-bar ul li a {
+    display: block;
+    color: #fefefe;
+    font-size: 30px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 5px;
+}
+
+.nav-bar ul li a:hover {
+    color: #11101b;
+    background: #fefefe;
+
+}
+
+.nav-bar ul li a.active {
+    color: #11101b;
+    background: #fefefe;
+}
+
+@media only screen and (max-width:1320px) {
+    header {
+        padding: 0 50px;
+    }
+
+}
+
+@media only screen and (max-width:1100px) {
+    header {
+        padding: 0 30px;
+    }
+
+}
+
+@media only screen and (max-width:900px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background: #fefefe;
+        margin: 6px 0;
+    }
+
+    .nav-bar {
+        height: 0px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: #11101b;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .nav-bar.active {
+        height: 450px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+
+    }
+
+}
+
+.cursor{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fefefe;
+    transition: 0.1s;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+ul li:hover .cursor{
+    transform: scale(6);
+}
+
+span{
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    font-weight: lighter;
+
+}
+pre{
+    
+    font-family: 'Times New Roman', Times, serif;
+    color: #fefefe;
+    align-items: center;
+    justify-content: center;
+
+    
+}
